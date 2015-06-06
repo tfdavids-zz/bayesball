@@ -23,15 +23,15 @@ nick_hundley = player.Player()
 brandon_barnes = player.Player()
 eddie_butler = player.Player()
 
-billy_burns = player.Player()
-marcus_semien = player.Player()
-ben_zobrist = player.Player()
-billy_butler = player.Player()
-brett_lawrie = player.Player()
-josh_reddick = player.Player()
-stephen_vogt = player.Player()
-eric_sogard = player.Player()
-sonny_gray = player.Player()
+billy_burns = player.Player(name='Billy Burns')
+marcus_semien = player.Player(name='Marcus Semien')
+ben_zobrist = player.Player(name='Ben Zobrist')
+billy_butler = player.Player(name='Billy Butler')
+brett_lawrie = player.Player(name='Brett Lawrie')
+josh_reddick = player.Player(name='Josh Reddick')
+stephen_vogt = player.Player(name='Stephen Vogt')
+eric_sogard = player.Player(name='Eric Sogard')
+sonny_gray = player.Player(name='Sonny Gray')
 
 rockies = team.Team([
     charlie_blackmon,
@@ -67,20 +67,34 @@ Select an option:
 [2] Play game
 """
 
+def editLineup():
+    print """
+    Here is your lineup:
+    """
+
+    positions = ['P', 'C', '1B', '2B', '3B', 'SS', 'LF', 'CF', 'RF']
+
+    for i in xrange(9):
+        print '%d. %s (%s)' % (i+1, athletics.players[i].name, positions[i])
+
+def beginGame():
+    print """
+    Starting game . . .
+    """
+    
+    my_game = game.Game(rockies, athletics)
+    
+    print """
+    Started game!
+    """
+    
+    my_game.atBat()
+
 choice = raw_input()
 if choice == '1':
-    raise Exception
-elif choice != '2':
-    raise Exception
+    editLineup()
+elif choice == '2':
+    beginGame()
+else:
+    raise Exception("did not choose valid option")
 
-print """
-Starting game . . .
-"""
-
-my_game = game.Game(rockies, athletics)
-
-print """
-Started game!
-"""
-
-my_game.atBat()

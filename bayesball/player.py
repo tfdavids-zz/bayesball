@@ -1,5 +1,5 @@
 class Player(object):
-    def __init__(self):
-        self.position = None
-        self.name = None
+    def __init__(self, position=None, name=None):
+        self.position = position
+        self.name = name
         # ...
