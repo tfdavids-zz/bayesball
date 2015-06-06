@@ -1,8 +1,8 @@
 class Team(object):
-    def __init__(self):
-        self.players = []
-        self.lineup = []
-        self.positions = []
+    def __init__(self, players):
+        self.players = players
+        self.lineup = players
+        self.positions = players
 
 class TeamState(object):
     def __init__(self, team):
@@ -10,4 +10,4 @@ class TeamState(object):
 
         self.players = team.players
         self.lineup = team.lineup
-        self.positions = team.position
+        self.positions = team.positions
