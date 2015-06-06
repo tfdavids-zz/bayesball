@@ -61,6 +61,22 @@ print """
 Teams successfully set up!
 """
 
+print """
+Select an option:
+[1] Edit your lineup
+[2] Play game
+"""
+
+choice = raw_input()
+if choice == '1':
+    raise Exception
+elif choice != '2':
+    raise Exception
+
+print """
+Starting game . . .
+"""
+
 my_game = game.Game(rockies, athletics)
 
 print """
