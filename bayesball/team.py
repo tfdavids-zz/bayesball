@@ -11,3 +11,10 @@ class TeamState(object):
         self.players = team.players
         self.lineup = team.lineup
         self.positions = team.positions
+
+    def getBatter(self):
+        return self.lineup[self.atbat]
+
+    def getPitcher(self):
+        return self.positions[0]
+
