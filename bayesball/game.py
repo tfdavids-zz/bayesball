@@ -20,7 +20,7 @@ class Game(object):
 
         self.matchup(batter, pitcher)
         
-        self.show_game_state()
+        self.showGameState()
 
     def matchup(self, batter, pitcher):
         batting_avg = batter.batting_avg
@@ -36,7 +36,7 @@ class Game(object):
             self.outs += 1    
             print "The pitcher got the out!"
 
-    def show_game_state(self):
+    def showGameState(self):
         if self.is_top_of_inning:
             print "It is the top of Inning", self.inning + 1
         else:
